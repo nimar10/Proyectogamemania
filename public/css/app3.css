@@ -1,0 +1,29 @@
+#centrarform {
+    margin-top: 25vh;
+    background-image: url("../img/consolas/consolas.jpg");
+}
+
+/* Lista de usuarios*/
+#centrarform2 {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    
+    background-image: url("../img/usuarios/panel.jpg");
+}
+
+#centrarform3 {
+    margin-top: 10vh;
+    margin: 0 auto;
+}
+
+.lista {
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("../img/fondoo.jpg");
+}
+
+h2 {
+   margin: 0 auto;
+}
+
+
