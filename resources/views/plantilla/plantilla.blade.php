@@ -10,14 +10,15 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    {{-- <link rel="stylesheet" href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" > --}}
+    <link rel="stylesheet" href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" >
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/app3.css')}}">
     <title>@yield('titulo')</title>
 </head>
-<body style=" background-image: url('../img/fondo2.jpg')">
+<body class="fondoplantilla">
 
-    <h3 class="text-center mt-3">@yield('cabecera')</h3>
-    <div class="container mt-3">
+
+    <div class="container" style="background: violet">
         @yield('contenido')
     </div>
 </body>

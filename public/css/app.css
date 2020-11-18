@@ -16,7 +16,7 @@
 }
 
 #centrarform{
-    
+
     margin-top: 50vh;
 
 }
@@ -42,13 +42,17 @@
 
  .fotoL{
      float: right;
-
-
      max-width: 100%;
      max-height: 100%;
      box-sizing: border-box;
-
  }
+ .fondoplantilla{
+     background-image: url('../img/fondodetalle.jpg');
+     background-attachment: fixed;
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+
 
     /*Responsive cabecera*/
  .titulo{
@@ -65,6 +69,12 @@
  @media (max-width: 600px) {
   .titulo {
     font-size: 300%;
+  }
+
+  @media(max-width: 500px){
+      #detallee{
+          max-height: 100%;
+      }
   }
 
 }
@@ -111,8 +121,6 @@
       #navL:hover {
         background-color:gold;
       }
-
-
 
 @media screen and (max-width: 500px) {
         #navL {

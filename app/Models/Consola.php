@@ -11,5 +11,16 @@ class Consola extends Model
 
     protected $fillable=['nombre','marca','modelo','descripcion','imagen'];
 
-   
+
+    public function scopeConsola($query, $v){
+        if(!isset($v)){
+            return $query->where('nombre', 'like', '%');
+        }
+
+        if ($v=='%'){
+            return $query->where('nombre', 'like', $v);
+        }
+
+        return $query->where('nombre', $v);
+    }
 }

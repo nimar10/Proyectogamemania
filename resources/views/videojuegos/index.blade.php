@@ -68,7 +68,7 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                         @if (Auth::check())
+                                        @if (Auth::check())
 
                                             <a class="dropdown-item"
                                                 href="{{ route('usuarios.show') }}">{{ __('Ver mi Perfil') }}
@@ -82,7 +82,7 @@
                                         @endcan
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                                                 document.getElementById('logout-form').submit();">
                                             {{ __('Cerrar Sesión') }}
                                         </a>
 
@@ -123,10 +123,35 @@
                             <a class="nav-link" href="{{ route('accesorios.index') }}">Accesorios</a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Introducir Texto"
-                            aria-label="Search">
-                        <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('videojuegos.index') }}"
+                        name="search">
+
+                        <select name="consolas" class='form-control mr-5 mt-1' onchange="this.form.submit()">
+                            <option value="%">Consolas (Todos)</option>
+                            @foreach ($consolas as $consola)
+                                @if ($request->consolas == $consola->id)
+                                    <option value="{{ $consola->id }}" selected>{{ $consola->nombre }}</option>
+                                @else
+                                    <option value="{{ $consola->id }}">{{ $consola->nombre }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+
+                        <select name="nombre" class='form-control mr-5 mt-1' onchange="this.form.submit()">
+                            <option value="%">Nombres (Todos)</option>
+                            @foreach ($juegos as $item)
+                                @if ($item == $request->nombre)
+                                    <option selected>{{ $item }}</option>
+                                @else
+                                    <option>{{ $item }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+
+
+
+
+
                     </form>
                 </div>
             </nav>
@@ -143,7 +168,8 @@
 
                 @can('Admin')
 
-                <a href="{{route('videojuegos.create')}}" class="btn btn-warning  float-right" style="font-weight:bold;">Añadir Videojuego</a>
+                    <a href="{{ route('videojuegos.create') }}" class="btn btn-warning  float-right"
+                        style="font-weight:bold;">Añadir Videojuego</a>
                 @endcan
             </nav>
         </div>
@@ -152,32 +178,38 @@
         <!--Productos-->
         <div class="row">
             <div class="card-group">
-            <div class="card ">
-                @foreach ($videojuegos as $item)
-                <div class="row no-gutters mt-2 ">
-                        <div class="col-md-4">
-                            <img src="{{ asset($item->imagen) }}" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $item->nombre}} ({{$item->consola->nombre}}) {{ $item->compañia }}</h5>
-                                <p class="card-text">{{ $item->descripcion }}</p>
-                                <p class="card-text"><a href="{{route('videojuegos.show',$item)}}">leer descripcion</p></a>
+                <div class="card ">
+                    @foreach ($videojuegos as $item)
+                        <div class="row no-gutters mt-2 ">
+                            <div class="col-md-4">
+                                <img src="{{ asset($item->imagen) }}" class="card-img" alt="...">
                             </div>
-                            @can('Admin')
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $item->nombre }} ({{ $item->consola->nombre }})
+                                        {{ $item->compañia }}
+                                    </h5>
+                                    <p class="card-text">{{ $item->descripcion }}</p>
+                                    <p class="card-text"><a href="{{ route('videojuegos.show', $item) }}">leer
+                                            descripcion</p></a>
+                                </div>
+                                @can('Admin')
 
-                            <form class="form-inline mb-2 ml-2" name="del" action="{{route('videojuegos.destroy',$item)}}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <input type="submit" onclick="return confirm('¿Borrar Videojuego?')" class="btn btn-danger mt-2" value="Borrar " >
+                                    <form class="form-inline mb-2 ml-2" name="del"
+                                        action="{{ route('videojuegos.destroy', $item) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <a href="{{ route('videojuegos.edit', $item) }}"
+                                            class="btn btn-warning mt-2 ml-2"><b>Opciones</b> </a>
+                                        <input type="submit" onclick="return confirm('¿Borrar Videojuego?')"
+                                            class="btn btn-danger mt-2 ml-2" value="Eliminar">
 
-                                <a href="{{route('videojuegos.edit',$item)}}" class="btn btn-warning mt-2 ml-2">Opciones </a>
-                                </form>
-                            @endcan
+                                    </form>
+                                @endcan
+                            </div>
                         </div>
+                    @endforeach
                 </div>
-                @endforeach
-            </div>
             </div>
 
 

@@ -14,13 +14,34 @@ class VideojuegoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
         $consolas=Consola::all();
-        $videojuegos=Videojuego::all();
+        $nombreConsola=$request->get('consolas');
+
+        $juegos=[
+            'Animal Crossing',
+            'Bayonetta',
+            'CyberPunk77',
+            'Fifa 21',
+            'Jumanji',
+            'Need for Speed',
+            'Pokemon Escudo',
+            'Super Mario 3D',
+            'Wolfenstein'
+        ];
 
 
-        return view('videojuegos.index', compact('videojuegos','consolas'));
+        $nombreV=$request->get('nombre');
+
+
+
+        $videojuegos=Videojuego::orderBy('id')->
+        consola($nombreConsola)
+        ->videojuego($nombreV)->get();
+
+        return view('videojuegos.index', compact('videojuegos','consolas','request','juegos'));
     }
 
 

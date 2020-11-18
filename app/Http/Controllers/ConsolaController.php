@@ -14,10 +14,18 @@ class ConsolaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $consolas=Consola::all();
-        return view('consolas.index', compact('consolas'));
+        $cons=[
+            'PS4',
+            'XBOX ONE',
+            'Nintendo Switch'
+        ];
+
+        $todasConsolas=$request->get('nombre');
+        $consolas=Consola::orderBy('nombre')
+        ->consola($todasConsolas)->get();
+        return view('consolas.index', compact('consolas','request','cons'));
     }
 
     /**

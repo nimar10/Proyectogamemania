@@ -68,7 +68,7 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                         @if (Auth::check())
+                                        @if (Auth::check())
 
                                             <a class="dropdown-item"
                                                 href="{{ route('usuarios.show') }}">{{ __('Ver mi Perfil') }}
@@ -81,7 +81,7 @@
                                                 href="{{ route('usuarios.index') }}">{{ __('Panel del usuario') }}</a>
                                         @endcan
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                                                     document.getElementById('logout-form').submit();">
                                             {{ __('Cerrar Sesión') }}
                                         </a>
 
@@ -123,10 +123,18 @@
                             <a class="nav-link" href="{{ route('accesorios.index') }}">Accesorios</a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Introducir Texto"
-                            aria-label="Search">
-                        <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('accesorios.index') }}"
+                        name="search">
+                        <select name="nombre" class='form-control mr-5 mt-1' onchange="this.form.submit()">
+                            <option value="%">Accesorios (Todos)</option>
+                            @foreach ($acc as $item)
+                                @if ($item == $request->nombre)
+                                    <option selected>{{ $item }}</option>
+                                @else
+                                    <option>{{ $item }}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </form>
                 </div>
             </nav>
@@ -143,7 +151,8 @@
 
                 @can('Admin')
 
-                <a href="{{route('accesorios.create')}}" class="btn btn-warning  float-right" style="font-weight:bold;">Añadir Accesorio</a>
+                    <a href="{{ route('accesorios.create') }}" class="btn btn-warning  float-right"
+                        style="font-weight:bold;">Añadir Accesorio</a>
                 @endcan
             </nav>
         </div>
@@ -162,17 +171,20 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $item->nombre }} {{ $item->modelo }} ({{ $item->marca }})</h5>
                                 <p class="card-text">{{ $item->descripcion }}</p>
-                            <p class="card-text"><a href="{{route('accesorios.show', $item)}}">leer descripcion</p></a>
+                                <p class="card-text"><a href="{{ route('accesorios.show', $item) }}">leer descripcion
+                                </p></a>
                             </div>
 
                             @can('Admin')
 
-                            <form class="form-inline ml-4" name="del" action="{{route('accesorios.destroy',$item)}}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <input type="submit" onclick="return confirm('¿Borrar Accesorio?')" class="btn btn-danger mt-2" value="Borrar " >
-
-                                <a href="{{route('accesorios.edit',$item)}}" class="btn btn-warning mt-2 ml-2">Opciones </a>
+                                <form class="form-inline ml-4" name="del" action="{{ route('accesorios.destroy', $item) }}"
+                                    method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <a href="{{ route('accesorios.edit', $item) }}"
+                                        class="btn btn-warning  ml-1"><b>Opciones</b> </a>
+                                    <input type="submit" onclick="return confirm('¿Borrar Accesorio?')"
+                                        class="btn btn-danger ml-2" value="Eliminar">
                                 </form>
                             @endcan
                         </div>

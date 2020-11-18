@@ -45,18 +45,18 @@
                         </div>
                     </div>
 
-                    <div class="form-row mt-3">
-                        <div class="col">
+                    <div class="form-row-xs-3 mt-3">
+                        <div class="col-xs-3">
                             <label for="imagen" class="col-form-label">Imagen</label>
                             <input type="file" name="imagen" class="form-control" accept="image/*">
                         </div>
                     </div>
 
                     <div class="form-row mt-3">
-                        <div class="col">
-                            <input type="submit" value="Crear" class="btn btn-success mr-3">
-                            <input type="reset" value="Limpiar" class="btn btn-warning mr-3">
-                            <a href="{{ route('videojuegos.index') }}" class="btn btn-info">Volver</a>
+                        <div class=" col-xs-3 ">
+                            <input type="submit" value="Crear" class="btn btn-success mr-3 float-left">
+                            <input type="reset" value="Limpiar" class="btn btn-warning mr-3 float-left">
+                            <a href="{{ route('videojuegos.index') }}" class="btn btn-info float-right">Volver</a>
                         </div>
                     </div>
                 </form>

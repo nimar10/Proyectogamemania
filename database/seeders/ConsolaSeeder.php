@@ -44,16 +44,5 @@ class ConsolaSeeder extends Seeder
             de acoplamiento para conectarla con un televisor.',
             'imagen'=>'img/consolas/switch.jpg'
         ]);
-
-        Consola::create([
-            'nombre'=>'Nintendo Switch',
-            'marca'=>'Nintendo',
-            'modelo'=>'V2',
-            'descripcion'=>'Nintendo Switch es la octava consola de videojuegos principal desarrollada por Nintendo.
-             Nintendo considera a Switch una consola híbrida.
-            Se puede utilizar como consola de sobremesa con la unidad principal insertada en una estación
-            de acoplamiento para conectarla con un televisor.',
-            'imagen'=>'img/consolas/switch.jpg'
-        ]);
     }
 }

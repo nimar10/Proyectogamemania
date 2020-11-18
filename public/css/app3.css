@@ -1,13 +1,20 @@
 #centrarform {
-    margin-top: 25vh;
+     margin-top: 25vh;
     background-image: url("../img/consolas/consolas.jpg");
+    background: rgb(110, 183, 206);
+}
+
+@media(max-width: 568px){
+    #centrarform{
+        margin: 0 auto;
+    }
 }
 
 /* Lista de usuarios*/
 #centrarform2 {
     margin-top: 5vh;
     margin-bottom: 5vh;
-    
+
     background-image: url("../img/usuarios/panel.jpg");
 }
 

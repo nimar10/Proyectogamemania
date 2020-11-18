@@ -14,10 +14,22 @@ class AccesorioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $accesorios=Accesorio::all();
-        return view('accesorios.index', compact('accesorios'));
+        $acc=[
+            'Auriculares Gaming',
+            'Camara',
+            'Carga Dualshock',
+            'Gafas VR',
+            'Mando Dualshock',
+            'Volante Gaming'
+
+        ];
+        $nombreAccesorio=$request->get('nombre');
+        $accesorios=Accesorio::orderBy('nombre')
+        ->accesorio($nombreAccesorio)->get();
+
+        return view('accesorios.index', compact('accesorios','request','acc'));
     }
 
     /**
