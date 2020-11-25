@@ -15,7 +15,7 @@
 </head>
 
 <body
-    style="background-image: url('img/fondoInicio.jpg');  background-repeat:no-repeat; background-size: cover; background-attachment: fixed;">
+    style="background: linear-gradient(to bottom, blue, white);  background-repeat:no-repeat; background-size: cover; background-attachment: fixed;">
     <div class="container">
 
 

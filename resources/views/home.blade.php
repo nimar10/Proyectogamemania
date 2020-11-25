@@ -15,7 +15,7 @@
 </head>
 
 <body
-    style="background-image: url('img/fondoInicio.jpg');  background-repeat:no-repeat; background-size: cover; background-attachment: fixed;">
+    style="background-image: url('img/fondodetalle.jpg'); background-repeat: no repeat; background-size:cover ">
     <div class="container">
         <div class="row mb-2 ">
             <nav class="navbar navbar-expand-md navbar bg-dark shadow-sm">
@@ -149,7 +149,7 @@
 
 
                     </ul>
-                   
+
                 </div>
             </nav>
         </div>

@@ -39,17 +39,19 @@
                 </div>
             </div>
 
-            <div class="form-group row text-center">
+            <div class="form-group row mt-3">
+                <label for="imagen" class="col-sm-2 col-form-label"><b>Imagen: </b></label>
                 <div class="col-sm-10">
-                    <img src="{{ asset($consola->imagen) }}" width="40vw" height="40vh" class="rounded-circle mr-3">
-                    <b>Imagen: </b><input type='file' name='imagen' accept="image/*">
+                    <input type='file' name='imagen' accept="image/*" id="textImg" />
+                    <img src="{{ asset($consola->imagen) }}" width="40vw" height="40vh" class="rounded-circle mr-3"
+                        id="imgt">
                 </div>
             </div>
 
              <div class="form-group row mt-5 mb-2 ">
                 <div class="col-sm-10 m-auto">
-                    <input type="submit" class="btn btn-primary  btn-lg mb-3 float-left " value="Editar Consola">
-                <a href="{{route('consolas.index')}}" class="btn btn-warning btn-lg mb-3 float-right">Volver a Consolas</a>
+                    <input type="submit" class="btn btn-primary  btn-block mb-3 float-left " value="Editar Consola">
+                <a href="{{route('consolas.index')}}" class="btn btn-warning btn-block mb-3 float-right">Volver a Consolas</a>
                 </div>
             </div>
         </form>

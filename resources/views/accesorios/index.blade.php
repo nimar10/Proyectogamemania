@@ -15,7 +15,7 @@
 </head>
 
 <body
-    style="background-image: url('img/fondoInicio.jpg');  background-repeat:no-repeat; background-size: cover; background-attachment: fixed;">
+    style="background: linear-gradient(to bottom, blue, white);  background-repeat:no-repeat; background-size: cover; background-attachment: fixed;">
     <div class="container">
 
 
@@ -177,7 +177,7 @@
 
                             @can('Admin')
 
-                                <form class="form-inline ml-4" name="del" action="{{ route('accesorios.destroy', $item) }}"
+                                <form class="form-inline ml-4 mb-2" name="del" action="{{ route('accesorios.destroy', $item) }}"
                                     method="POST">
                                     @method('DELETE')
                                     @csrf

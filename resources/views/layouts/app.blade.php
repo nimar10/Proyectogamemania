@@ -20,7 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
 </head>
-<body style="background-image: url('img/fondoLR.jpg')">
+<body style="background-image: url('../img/fondoLR.jpg')">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">

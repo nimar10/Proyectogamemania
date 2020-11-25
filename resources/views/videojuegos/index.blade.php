@@ -15,7 +15,7 @@
 </head>
 
 <body
-    style="background-image: url('img/fondoInicio.jpg');  background-repeat:no-repeat; background-size: cover; background-attachment: fixed;">
+    style="background: linear-gradient(to bottom, blue, white);  background-repeat:no-repeat; background-size: cover; background-attachment: fixed;">
     <div class="container">
 
 
@@ -82,7 +82,7 @@
                                         @endcan
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                                                                                                 document.getElementById('logout-form').submit();">
+                                                                                                                                     document.getElementById('logout-form').submit();">
                                             {{ __('Cerrar Sesión') }}
                                         </a>
 
@@ -147,11 +147,6 @@
                                 @endif
                             @endforeach
                         </select>
-
-
-
-
-
                     </form>
                 </div>
             </nav>

@@ -48,8 +48,8 @@
         <div class="form-group row mt-3">
             <label for="imagen" class="col-sm-2 col-form-label"><b>Imagen: </b></label>
             <div class="col-sm-10">
-                <img src="{{ asset($videojuego->imagen) }}" width="40vw" height="40vh" class="rounded-circle mr-3">
-                <button type='file' name='imagen' accept="image/*">Selecciona una imagen</button>
+                <input type='file' name='imagen' accept="image/*" id="textImg"/>
+                <img src="{{ asset($videojuego->imagen) }}" width="40vw" height="40vh" class="rounded-circle mr-3" id="imgt">
             </div>
         </div>
 

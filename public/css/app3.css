@@ -1,36 +1,120 @@
 #centrarform {
-     margin-top: 25vh;
-    background-image: url("../img/consolas/consolas.jpg");
-    background: rgb(110, 183, 206);
+    margin-top: 25vh;
+    background: linear-gradient(to bottom, blue, white);  background-repeat:no-repeat; background-size: cover; background-attachment: fixed;
+    background: lightyellow;
+    border-radius: 20px;
+    border: black 10% solid;
 }
 
-@media(max-width: 568px){
-    #centrarform{
-        margin: 0 auto;
-    }
+/* Carta detalles*/
+
+#cartaDetalle{
+   margin-top: 20px
+}
+/* Fondo para los edits*/
+
+.fondoEdit {
+   background: linear-gradient(black,white,green);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
 }
 
 /* Lista de usuarios*/
 #centrarform2 {
     margin-top: 5vh;
     margin-bottom: 5vh;
-
-    background-image: url("../img/usuarios/panel.jpg");
+    /* background-image: url("../img/movil/fondom2.jpg"); */
+    background-color: lightblue;
 }
 
 #centrarform3 {
     margin-top: 10vh;
     margin: 0 auto;
 }
-
+/* Lista de usuarios solo Admin*/
 .lista {
-    background-attachment: fixed;
     background-size: cover;
-    background-image: url("../img/fondoo.jpg");
+    background-image: url("../img/fondodetalle.jpg");
+    height: 100% !important;
 }
+
+#alturalista {
+    height: 100vh !important;
+}
+/*-----------------------------------------------------------*/
 
 h2 {
-   margin: 0 auto;
+    margin: 0 auto;
 }
 
+.col {
+    font-weight: bolder;
+}
 
+/* vista para el perfil del usuario*/
+
+.fondoperfil {
+    background-image: url("../img/fondodetalle.jpg");
+}
+
+#perfilcarta {
+    margin-top: 25%;
+}
+
+/*--------------------------------------------------------*/
+
+/* Movil */
+
+@media (max-width: 600px) {
+    #centrarform {
+        margin: 0 auto;
+        font-weight: bold;
+    }
+
+    #centrarform2 {
+        background-color: whitesmoke;
+    }
+
+    #unoo {
+        padding: 10%;
+        background-image: url("../img/movil/editM.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #textImg {
+        font-size: 0.6rem;
+    }
+
+    #imgt {
+        display: none;
+    }
+
+    .lista {
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        background-image: url("../img/movil/editM.jpg");
+        background-repeat: no-repeat;
+    }
+
+    .fondoEdit {
+        background-image: url("../img/fondoInicio.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100% !important;
+    }
+    /* fondo usuario perfil*/
+    .fondoperfil {
+        background-image: url("../img/movil/fondom2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /*Fondo para carta detalle*/
+    #cartaDetalle {
+        margin-top: auto;
+    }
+}
