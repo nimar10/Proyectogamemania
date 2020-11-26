@@ -114,15 +114,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(User $usuario)
     {
         //Borrado de la imagen de la user
-        $imagen = $user->imagen;
+        $imagen = $usuario->imagen;
         if (basename($imagen) != "usuario.jpg") {
             unset($imagen);
         }
 
-        $user->delete();
+        $usuario->delete();
         return redirect()->route('usuarios.index');
     }
 

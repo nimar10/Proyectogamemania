@@ -95,6 +95,12 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+#rest{
+    background-image: url('../img/fondoLR.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100% !important;
+}
 p {
   margin-top: 0;
   margin-bottom: 1rem;

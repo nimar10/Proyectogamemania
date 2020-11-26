@@ -20,7 +20,7 @@
         <div class="card shadow" id="perfilcarta" >
             <div class="card-body" >
                 <img src="{{ asset('../img/logoD.png') }}" height="80px" width="80px" class="card-img-right rounded-pill float-right" alt="...">
-                <h5 class="card-title">Nombre: {{ auth()->user()->name }} Apellidos: {{ auth()->user()->apellido }}</h5>
+                <h5 class="card-title">Nombre: {{ auth()->user()->name }} {{ auth()->user()->apellido }}</h5>
                 <h5 class="card-title">Correo Electronico: {{ auth()->user()->email }}</h5>
                 <h5 class="card-title">DNI: {{ auth()->user()->dni }}</h5>
                 <h5 class="card-title">Telefono: {{ auth()->user()->telefono }}</h5>

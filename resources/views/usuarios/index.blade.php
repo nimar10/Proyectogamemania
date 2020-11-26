@@ -27,7 +27,7 @@
             @foreach ($users as $item)
 
                 <div class="list-group-item list-group-item-action list-group-item-warning mb-3">
-                    Nombre: {{ $item->name }} <br>
+                    Nombre: {{ $item->name }} {{$item->apellido}} <br>
                     Correo Electronico: ({{ $item->email }}) <br>
                     DNI : {{ $item->dni }} <br>
                     Telefono: {{ $item->telefono }}
